@@ -1,0 +1,35 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <p><table>
+            <strong>   
+            <tr>  <td>Posição</td> <td>Time</td> <td>Pontos</td> <td>Jogos</td> <td>Vitorias</td> <td>Derrotas</td> <td>Empates</td>   </tr>
+            </strong>
+            
+            <?php
+
+            foreach($classificacao as $pora => $posicao){
+                
+                $maria = $classificacao[$pora];
+
+                $joana = $equipes[$maria["time_id"]]; 
+                    
+                $img = $joana["brasao"];
+
+                echo "<tr>
+                    <td>${maria["posicao"]}</td>
+                    <td><img src=${img}>${joana["nome"]}</td>
+                    <td>${maria["pontos"]}</td>
+                    <td>${maria["jogos"]}</td>
+                    <td>${maria["vitorias"]}</td>
+                    <td>${maria["derrotas"]}</td>
+                    <td>${maria["empates"]}</td>
+                    </tr>";
+                    
+            }
+            
+
+        ?></table></p>
+    </body>
+</html>

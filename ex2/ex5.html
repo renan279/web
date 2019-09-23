@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <?php
+
+        function vendedor(){
+            $aux =  array(0, 0, 0, 0, 0);
+            global $venda;
+            for($i=0; $i<=4; $i++){
+                for($j=0; $j<=4; $j++){
+                    $aux[$i] += $venda[$i][$j];
+                }
+                $aux[$i] -= 1;
+            }
+            return $aux;
+        }
+        $resultado1 = implode(", ", vendedor());
+
+
+        function semana(){
+            $aux =  array(0, 0, 0, 0);
+            global $venda;
+            for($i=0; $i<=4; $i++){
+                for($j=1; $j<=4; $j++){
+                    $aux[$j-1] += $venda[$i][$j];
+                }
+            }
+            return $aux;
+        }
+        $resultado2 = implode(" - ", semana());
+
+
+        function total(){
+            $aux =  0;
+            global $venda;
+            for($i=0; $i<=4; $i++){
+                for($j=0; $j<=4; $j++){
+                    $aux += $venda[$i][$j];
+                }
+            }
+            return $aux-14;
+        }
+        $resultado3 = total();
+
+        ?>
+    </head>
+    <body>
+        <p>total de vendas do mês de cada vendedor: <?php printf ($resultado1); ?></p>
+        <p>total de vendas de cada semana: <?php printf ($resultado2); ?></p>
+        <p>total de vendas do mês da empresa: <?php printf ($resultado3); ?></p>
+    </body>
+</html>

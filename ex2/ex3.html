@@ -1,0 +1,15 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <p>Family: <?php echo $texto[0]; ?></p>
+        <p>Pet: <?php echo $texto[2]; ?></p>
+        <p>Membros: </p>
+        <?php
+            $fim = count($nomes);
+            for($i=0;$i<$fim;$i++){
+                echo $i+1 . $nomes[$i] . "<br>";
+            }
+        ?>
+    </body>
+</html>
